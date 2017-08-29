@@ -25,8 +25,7 @@ namespace SecurityDriven.Inferno
 		static readonly ThreadLocal<byte[]> _encKey = new ThreadLocal<byte[]>(() => new byte[ENC_KEY_LENGTH]);
 		static readonly ThreadLocal<byte[]> _macKey = new ThreadLocal<byte[]>(() => new byte[MAC_KEY_LENGTH]);
 		static readonly ThreadLocal<byte[]> _sessionKey = new ThreadLocal<byte[]>(() => new byte[HMAC_LENGTH]);
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        
 		static void ClearKeyMaterial()
 		{
 			Array.Clear(_encKey.Value, 0, ENC_KEY_LENGTH);

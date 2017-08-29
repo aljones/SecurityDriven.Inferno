@@ -38,16 +38,14 @@ namespace SecurityDriven.Inferno.Kdf
 			this.context = context;
 			Reset();
 		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        
 		public override void Reset()
 		{
 			k = Utils.ZeroLengthArray<byte>.Value;
 			k_unused = 0;
 			counter = 0;
 		}
-
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        
 		protected override void Dispose(bool disposing)
 		{
 			if (hmac != null)
